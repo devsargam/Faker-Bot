@@ -8,7 +8,7 @@ module.exports = {
     .addUserOption((option) =>
       option
         .setName("mention")
-        .setDescription("The input to echo back")
+        .setDescription("Username to fake the message as.")
         .setRequired(true)
     )
     .addStringOption((option) =>
@@ -35,14 +35,11 @@ module.exports = {
     const webhook = await this.checkPresentWebhooks(interaction);
     const message = interaction.options.getString("content");
     const member = interaction.options.getMember("mention");
-    webhook
-      .send({
-        username: member.user.nickname || member.user.username,
-        avatarURL: member.user.avatarURL(),
-        content: message,
-      })
-      .catch(console.error);
-
+    await webhook.send({
+      username: member.nickname || member.user.username,
+      avatarURL: member.user.avatarURL(),
+      content: message,
+    });
     await interaction.reply({ content: "Done!", ephemeral: true });
   },
 };

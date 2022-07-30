@@ -1,19 +1,14 @@
-const { BOT_TOKEN } = require("./config");
 const { Client, GatewayIntentBits, Collection } = require("discord.js");
-const fs = require("fs");
-const path = require("path");
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-client.commands = new Collection();
-const commandsPath = path.join(__dirname, "commands");
-const commandFileNames = fs
-  .readdirSync(commandsPath)
-  .filter((file) => file.endsWith(".js"));
+const { BOT_TOKEN } = require("./config");
+const getCommands = require("./helpers/getCommands");
 
-commandFileNames.forEach((file) => {
-  const command = require(path.join(commandsPath, file));
+client.commands = new Collection();
+
+for (const command of getCommands()) {
   client.commands.set(command.data.name, command);
-});
+}
 
 client.on("ready", () => {
   console.clear();

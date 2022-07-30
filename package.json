@@ -2,12 +2,12 @@
   "name": "discordjs",
   "version": "0.0.1",
   "description": "Discod bot written in javascript",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node .",
-    "deploy": "node deploy-commands.js",
-    "lint": "eslint --ext .js,.ts ."
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "deploy": "node src/deploy-commands.js",
+    "lint": "eslint --ext src/**.js,.ts"
   },
   "keywords": [],
   "author": "Sargam Poudel <sargampoudel100@gmail.com>",
@@ -16,7 +16,8 @@
     "@discordjs/rest": "^1.0.0",
     "discord-api-types": "^0.36.3",
     "discord.js": "^14.0.3",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "eslint-plugin-prettier": "^4.2.1"
   },
   "devDependencies": {
     "eslint": "^8.20.0",

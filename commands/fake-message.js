@@ -20,7 +20,8 @@ module.exports = {
 
   async checkPresentWebhooks(interaction) {
     const webhooks = await interaction.channel.fetchWebhooks();
-    const webhook = webhooks.find((wh) => wh.token);
+    // const webhook = webhooks.find((wh) => wh.token);
+    const webhook = webhooks.first();
 
     if (!webhook) {
       return await interaction.channel.createWebhook({
@@ -32,6 +33,12 @@ module.exports = {
   },
 
   async execute(interaction) {
+    if (interaction.channel.isThread()) {
+      return await interaction.reply({
+        content: "This command is not available in threads.",
+        ephemeral: true,
+      });
+    }
     const webhook = await this.checkPresentWebhooks(interaction);
     const message = interaction.options.getString("content");
     const member = interaction.options.getMember("mention");

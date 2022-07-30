@@ -27,7 +27,7 @@ const rest = new REST({ version: "9" }).setToken(BOT_TOKEN);
       process.env.NODE_ENV === "development"
         ? Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID)
         : Routes.applicationCommands(CLIENT_ID),
-      { body: [] }
+      { body: commands }
     );
 
     console.log("Successfully reloaded application (/) commands.");

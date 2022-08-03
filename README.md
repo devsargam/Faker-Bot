@@ -2,7 +2,7 @@
 
 A fun and utility bot for entertainment and utility.
 
-You can invite this bot by clicking [here]("https://discord.com/api/oauth2/authorize?client_id=875693347350659132&permissions=37088600&scope=bot%20applications.commands")
+You can invite this bot by clicking [here](https://discord.com/api/oauth2/authorize?client_id=875693347350659132&permissions=37088600&scope=bot%20applications.commands)
 
 ## Development Setup
 

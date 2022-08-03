@@ -20,8 +20,7 @@ module.exports = {
 
   async checkPresentWebhooks(interaction) {
     const webhooks = await interaction.channel.fetchWebhooks();
-    // const webhook = webhooks.find((wh) => wh.token);
-    const webhook = webhooks.first();
+    const webhook = webhooks.find((wh) => wh.token);
 
     if (!webhook) {
       return await interaction.channel.createWebhook({

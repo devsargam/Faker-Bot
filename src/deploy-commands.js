@@ -6,9 +6,9 @@ const getCommands = require("./helpers/getCommands");
 
 const commands = [];
 
-for (const command of getCommands()) {
+getCommands().forEach((command) => {
   commands.push(command.data.toJSON());
-}
+});
 
 const rest = new REST({ version: "9" }).setToken(process.env.BOT_TOKEN);
 

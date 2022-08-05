@@ -23,7 +23,7 @@ module.exports = {
     const webhook = webhooks.find((wh) => wh.token);
 
     if (!webhook) {
-      return await interaction.channel.createWebhook({
+      await interaction.channel.createWebhook({
         name: "faker",
         avatar: interaction.client.user.avatarURL(),
       });
@@ -33,7 +33,7 @@ module.exports = {
 
   async execute(interaction) {
     if (interaction.channel.isThread()) {
-      return await interaction.reply({
+      return interaction.reply({
         content: "This command is not available in threads.",
         ephemeral: true,
       });

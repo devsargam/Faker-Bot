@@ -10,20 +10,20 @@ class ExtendedClient extends Client {
       intents: [GatewayIntentBits.Guilds],
     });
     this.commands = new Collection();
-    this._loadCommands();
-    this._loadEvents();
+    this.loadCommands();
+    this.loadEvents();
   }
 
-  _loadEvents() {
-    for (const event of getEvents()) {
+  loadEvents() {
+    getEvents().forEach((event) => {
       this.on(event.name, event.handler);
-    }
+    });
   }
 
-  _loadCommands() {
-    for (const command of getCommands()) {
+  loadCommands() {
+    getCommands().forEach((command) => {
       this.commands.set(command.data.name, command);
-    }
+    });
   }
 }
 

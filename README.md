@@ -18,6 +18,7 @@ yarn start
 | fake-message | Fakes a message as another user or bot through webhook |
 | ping         |                Shows the bot's latency                 |
 | uptime       |          Shows when the bot was last started           |
+| whois        |            Gives info about a server member            |
 
 This is a WIP so expect number of changes and additions to commands and catagories
 

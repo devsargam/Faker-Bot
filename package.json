@@ -7,9 +7,9 @@
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
     "deploy": "node src/deploy-commands.js",
-    "lint": "eslint --ext src/**.js,.ts"
+    "lint": "eslint src/**"
   },
-  "keywords": [],
+  "keywords": ["discord", "bot", "javascript", "discord.js", "v13"],
   "author": "Sargam Poudel <sargampoudel100@gmail.com>",
   "license": "ISC",
   "dependencies": {
@@ -20,8 +20,12 @@
     "eslint-plugin-prettier": "^4.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.20.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1"
   }

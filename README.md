@@ -19,6 +19,7 @@ yarn start
 | ping         |                Shows the bot's latency                 |
 | uptime       |          Shows when the bot was last started           |
 | whois        |            Gives info about a server member            |
+| status       |    Gives info about the bot's memory and processor     |
 
 This is a WIP so expect number of changes and additions to commands and catagories
 
